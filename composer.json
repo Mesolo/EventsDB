@@ -1,0 +1,21 @@
+{
+    "name": "mesolo/eventsdb",
+    "description": "Fetch events stored in db and renders itin a month calendar as an associative array",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roberto Barna",
+            "email": "soromesolo@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">= 7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "EventsDB\\": "src/EventsDB/"
+        }
+    }
+}
