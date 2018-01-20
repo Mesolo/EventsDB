@@ -3,6 +3,7 @@
 namespace EventsDB;
 
 use InvalidArgumentException;
+use DateTime;
 
 class EventsDB
 {
@@ -22,7 +23,7 @@ class EventsDB
      */
     public static function createFromEvents(array $events, string $dateField = 'date'): EventsDB
     {
-        uasort($events, function ($a, $b) use($dateField) {
+        uasort($events, function ($a, $b) use ($dateField) {
             return $a[$dateField] - $b[$dateField];
         });
 
@@ -75,7 +76,7 @@ class EventsDB
                 $event = false;
 
             $month[] = [
-                'day'   => $day,
+                'day'   => DateTime::createFromFormat('Ymd', $day),
                 'event' => $event
             ];
 
