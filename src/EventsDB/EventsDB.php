@@ -3,6 +3,7 @@
 namespace EventsDB;
 
 use InvalidArgumentException;
+use DateTime;
 
 class EventsDB
 {
@@ -75,7 +76,7 @@ class EventsDB
                 $event = false;
 
             $month[] = [
-                'day'   => $day,
+                'day'   => DateTime::createFromFormat('Ymd', $day),
                 'event' => $event
             ];
 
