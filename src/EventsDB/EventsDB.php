@@ -22,7 +22,11 @@ class EventsDB
      */
     public static function createFromEvents(array $events, string $dateField = 'date'): EventsDB
     {
-        static::$events = $events;
+        uasort($events, function ($a, $b) use($dateField) {
+            return $a[$dateField] - $b[$dateField];
+        });
+
+        static::$events = array_values($events);
         static::$dateField = $dateField;
 
         return new self;
